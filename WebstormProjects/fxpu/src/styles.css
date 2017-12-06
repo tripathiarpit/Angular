@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+#top-nav {
+  height: 30px;
+  color: #444;
+  line-height: 30px;
+  font-size: 13px;
+  background-image:-webkit-linear-gradient(top,#d9534f 0,#c12e2a 100%);
+  background-image:-o-linear-gradient(top,#d9534f 0,#c12e2a 100%);
+  background-image:-webkit-gradient(linear,left top,left bottom,from(#d9534f),to(#c12e2a));
+  background-image:linear-gradient(to bottom,#d9534f 0,#c12e2a 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc12e2a', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);background-repeat:repeat-x;
+}
+
+#footer {
+  margin: 20px 0 0 0;
+  padding: 15px 0;
+  font-size: 12px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+#header {
+  margin-bottom: 20px;
+  height: 60px;
+  line-height: 60px;
+  background: rgba(254,254,254,1);
+  background: -moz-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 49%, rgba(219,219,219,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,254,254,1)), color-stop(49%, rgba(209,209,209,1)), color-stop(100%, rgba(219,219,219,1)));
+  background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 49%, rgba(219,219,219,1) 100%);
+  background: -o-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 49%, rgba(219,219,219,1) 100%);
+  background: -ms-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 49%, rgba(219,219,219,1) 100%);
+  background: linear-gradient(to bottom, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 49%, rgba(219,219,219,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#dbdbdb', GradientType=0 );
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.55);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.55);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.55);
+}
+.login .form-group {
+  width: 300px;
+}
+.login h1 {
+  margin: 0 0 20px 0;
+  padding: 0 0 10px 0;
+  font-size: 22px;
+  border-bottom: 1px solid #ddd;
+}
+.btn {
+  display: inline-block;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  padding: 6px 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: initial;
+  border-radius: 4px;
+}
+.btn-primary {
+  color: rgb(255, 255, 255);
+  background-color: rgb(51, 122, 183);
+  border-color: rgb(46, 109, 164);
+}
+.form-control {
+  border-radius: 0;
+  height: 28px;
+}
+input[type=text], select {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=password], select {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.w3-text-grey, .w3-hover-text-grey:hover, .w3-text-gray, .w3-hover-text-gray:hover {
+  color: #757575!important;
+}
