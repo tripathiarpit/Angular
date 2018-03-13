@@ -1,0 +1,276 @@
+<div class="col-sm-9">
+    <div layout="column">
+    </div>
+    <app-page-title [pageTitle]="pageTitle"></app-page-title>
+    <form class="form-background" [formGroup]="createUserForm" (ngSubmit)="createUserForm.valid ? submit($event): false"
+          style="padding: 15px;">
+        <div id="builder-basic">
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    User Type : {{userType}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field>
+                        <mat-select [formControl]="namePrefix" placeholder="User Type*">
+                            <mat-option *ngFor="let prefix of namePrefixList" [value]="prefix.value">
+                                {{ prefix.viewValue }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="namePrefix.hasError('required') || namePrefix.hasError('prefixError')">
+                            Prefix is required.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="First Name" autocomplete="off" [formControl]="firstName"
+                               name="fname" required>
+                        <mat-error *ngIf="firstName.hasError('required')">
+                            First Name is required.
+                        </mat-error>
+                        <mat-error *ngIf="!firstName.hasError('required') && firstName.hasError('minlength')">
+                            First Name is too short.
+                        </mat-error>
+                        <mat-error *ngIf="!firstName.hasError('required') && firstName.hasError('maxlength')">
+                            First Name is too long.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="!firstName.hasError('required') && !firstName.hasError('maxlength') && !firstName.hasError('minlength') && firstName.hasError('pattern')">
+                            Enter valid First Name.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="Last Name" [formControl]="lastName" autocomplete="off" name="lname"
+                               required>
+
+                        <mat-error *ngIf="lastName.hasError('required')">
+                            Last Name is required.
+                        </mat-error>
+                        <mat-error *ngIf="!lastName.hasError('required') && lastName.hasError('minlength')">
+                            Last Name is too short.
+                        </mat-error>
+                        <mat-error *ngIf="!lastName.hasError('required') && lastName.hasError('maxlength')">
+                            Last Name is too long.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="!lastName.hasError('required') && !lastName.hasError('maxlength') && !lastName.hasError('minlength') && lastName.hasError('pattern')">
+                            Enter valid Last Name.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="Middle Name" autocomplete="off" name="mname" required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="Suffix Key" [formControl]="suffixKey" autocomplete="off"
+                               name="suffix" required>
+
+                        <mat-error *ngIf="suffixKey.hasError('minlength') && !suffixKey.hasError('maxlength')">
+                            Suffix is too short.
+                        </mat-error>
+                        <mat-error *ngIf="!suffixKey.hasError('minlength') && suffixKey.hasError('maxlength')">
+                            Suffix is too long.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="!suffixKey.hasError('maxlength') && !suffixKey.hasError('minlength') && suffixKey.hasError('pattern')">
+                            Enter valid Suffix.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="Address Line 1" [formControl]="address1" autocomplete="off"
+                               name="add1" required>
+                        <mat-error *ngIf="address1.hasError('required')">
+                            Address is required.
+                        </mat-error>
+                        <mat-error *ngIf="!address1.hasError('required') && address1.hasError('minlength')">
+                            Address is too short.
+                        </mat-error>
+                        <mat-error *ngIf="!address1.hasError('required') && address1.hasError('maxlength')">
+                            Address is too long.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="!address1.hasError('required') && !address1.hasError('maxlength') && !address1.hasError('minlength') && address1.hasError('pattern')">
+                            AlphaNumeric only allowed.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="Address Line 2" [formControl]="address2" autocomplete="off"
+                               name="add2">
+                        <mat-error *ngIf="address2.hasError('minlength')">
+                            Address is too short.
+                        </mat-error>
+                        <mat-error *ngIf="address2.hasError('maxlength')">
+                            Address is too long.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="!address2.hasError('maxlength') && !address2.hasError('minlength') && address2.hasError('pattern')">
+                            AlphaNumeric only allowed.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="Address Line 3" [formControl]="address3" autocomplete="off"
+                               name="add3">
+                        <mat-error *ngIf="address3.hasError('minlength')">
+                            Address is too short.
+                        </mat-error>
+                        <mat-error *ngIf="address3.hasError('maxlength')">
+                            Address is too long.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="!address3.hasError('maxlength') && !address3.hasError('minlength') && address3.hasError('pattern')">
+                            AlphaNumeric only allowed.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="City" autocomplete="off" [formControl]="city" name="city" required>
+                        <mat-error *ngIf="city.hasError('required')">
+                            City name is required.
+                        </mat-error>
+                        <mat-error *ngIf="!city.hasError('required') && city.hasError('minlength')">
+                            City name is too short.
+                        </mat-error>
+                        <mat-error *ngIf="!city.hasError('required') && city.hasError('maxlength')">
+                            City name is too long.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="!city.hasError('required') && !city.hasError('maxlength') && !city.hasError('minlength') && city.hasError('pattern')">
+                            Alphabets only allowed.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="State" [formControl]="state" autocomplete="off" name="state"
+                               required>
+                        <mat-error *ngIf="state.hasError('required')">
+                            State name is required.
+                        </mat-error>
+                        <mat-error *ngIf="!state.hasError('required') && state.hasError('minlength')">
+                            State name is too short.
+                        </mat-error>
+                        <mat-error *ngIf="!state.hasError('required') && state.hasError('maxlength')">
+                            State name is too long.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="!state.hasError('required') && !state.hasError('maxlength') && !state.hasError('minlength') && state.hasError('pattern')">
+                            Alphabets only allowed.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="Zip Code" [formControl]="zipCode" autocomplete="off" name="zip"
+                               required>
+                        <mat-error *ngIf="zipCode.hasError('required')">
+                            Zip Code is required.
+                        </mat-error>
+                        <mat-error *ngIf="!zipCode.hasError('required') && zipCode.hasError('minlength')">
+                            Zip Code is too short.
+                        </mat-error>
+                        <mat-error *ngIf="!zipCode.hasError('required') && zipCode.hasError('maxlength')">
+                            Zip Code is too long.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="!zipCode.hasError('required') && !zipCode.hasError('maxlength') && !zipCode.hasError('minlength') && zipCode.hasError('pattern')">
+                            Numeric only allowed.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="!zipCode.hasError('required') && !zipCode.hasError('maxlength') && !zipCode.hasError('minlength') && zipCode.hasError('pattern')">
+                            Numeric only allowed.
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field>
+                        <mat-select [formControl]="countryName" placeholder="Country" required>
+                            <mat-option *ngFor="let country  of countryList" [value]="country">
+                                {{ country }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="countryName.hasError('required') || countryName.hasError('countryMandatory')">
+                            Country is required.
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="Email*" [formControl]="email" autocomplete="off" name="email">
+                        <mat-error *ngIf="email.hasError('required')">
+                            Email is required.
+                        </mat-error>
+                        <mat-error *ngIf="!email.hasError('required') && email.hasError('email') ">
+                            Enter valid Email.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="rule-value-container">
+                    <mat-form-field [hideRequiredMarker]="false" [floatLabel]="'auto'">
+                        <input matInput placeholder="Work Phone*" [formControl]="phone" autocomplete="off" name="phone">
+                        <mat-error *ngIf="phone.hasError('required')">
+                            Work Phone is required.
+                        </mat-error>
+                        <mat-error *ngIf="!phone.hasError('required') && phone.hasError('minlength')">
+                            Work Phone is too short.
+                        </mat-error>
+                        <mat-error *ngIf="!phone.hasError('required') && phone.hasError('maxlength')">
+                            Work Phone is too long.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="!phone.hasError('required') && !phone.hasError('maxlength') && !phone.hasError('minlength') && phone.hasError('pattern')">
+                            Enter Valid Phone Number.
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <br>
+        <button mat-raised-button [disabled]="!createUserForm.valid" class="btn btn-primary">Continue</button>
+        <button mat-raised-button class="btn btn-primary">Cancel</button>
+        <button mat-raised-button class="btn btn-primary">Back</button>
+    </form>
+</div>

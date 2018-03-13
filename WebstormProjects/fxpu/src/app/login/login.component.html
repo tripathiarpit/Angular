@@ -1,0 +1,33 @@
+<div id="top-nav">
+  <div class="container">
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div id="header">
+  <div class="container"><img src="./assets/images/hsbc-logo.png" alt="" width="141" height="25"></div>
+</div>
+<div class="container">
+
+  <div class="login">
+    <h1>Welcome</h1>
+    </div>
+    <form name="myForm" #loginForm="ngForm">
+      <div class="form-group">
+        <div>
+        <label class="w3-text-grey">User LoginID <span style="color:red">*</span></label>
+        </div>
+        <input type="text" autocomplete="off" class="form-control" required name="name">
+      </div>
+      <div class="form-group">
+        <div>
+        <label class="w3-text-grey">Password <span style="color:red">*</span></label>
+        </div>
+        <input type="password"  name="passwd" class="form-control"  autocomplete="off" required>
+        <p><em>This system may only be accesses by authorised users; Un authorised access might be considered a criminal act in jurisdictions.</em></p>
+      </div>
+
+      <button name="loginButton" type="submit" class="btn btn-primary" (click)="submit()" >Submit</button>
+    </form>
+  </div>
+
+<footer id="footer">&copy; Copyright 2016 HSBC Internet Payment Services (USA), Inc. All Rights Reserved.</footer>
