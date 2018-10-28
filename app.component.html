@@ -1,0 +1,32 @@
+<hello name="{{ name }}"></hello>
+<form [formGroup]="user">
+  <div class="div.custome">
+    <label>Old Password</label>
+    <input formControlName="oldpassword" type="password" placeholder="Enter Old Password">
+    <div class="error" *ngIf="user.get('oldpassword').hasError('required')
+    && user.get('oldpassword').touched" >
+     Old Password is Mandatory.
+    </div>
+  </div>
+  <div class="div.custome">
+     <label>New Password</label>
+    <input formControlName="password" type="password" placeholder="Enter new  Password">
+    <div class="error" *ngIf="user.get('password').hasError('required') && user.get('password').touched" >
+     New Password is Mandatory.
+    </div>
+    <div class="error" *ngIf="!user.get('password').hasError('required') && user.hasError('oldNewMatch')" >
+     New Password cannot be same As Old Password.
+    </div>
+  </div>
+
+  <div class="div.custome">
+     <label>Confirm New  Password</label>
+    <input formControlName="confirmPass"  type="password" placeholder="Confirm new  Password">
+    <div class="error" *ngIf="user.get('confirmPass').hasError('required') && user.get('confirmPass').touched" >
+     Confirm Password is Mandatory.
+    </div>
+    <div class="error" *ngIf="!user.get('confirmPass').hasError('required') && user.hasError('nomatch')" >
+     Confirm Password did not match new Password.
+    </div>
+  </div>
+</form>
